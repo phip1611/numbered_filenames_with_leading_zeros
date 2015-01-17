@@ -1,0 +1,20 @@
+{
+    "name":        "Nummerierte Dateinamen",
+    "description": "Nummerierte Dateinamen mit führenden Nullen ergänzen.\r\nLege Vorsichtshalber eine Sicherheitskopie vom Verzeichnis an!\r\n",
+    "version":     "1.0",
+    
+    "copyright_holder_name" :     "Philipp Schuster",
+    "copyright_holder_nickname" : "phip1611",
+    "copyright_holder_url" :      "http://phip1611.de",
+    "copyright_message" :         "Dieses Programm darf gerne unter den angegebenen Bedingungen weiterverwendet werden. :)",
+    "copyright_licence" :         "CC BY-NC-SA 4.0 (Creative Commons)",
+    
+    "default_filename_pattern" : "([\\w\\s\\-]+)\\((\\d+)\\)\\.(\\w+)",
+    "default_delimiter" :        "(",
+    "gui_autostart" :            false,
+    "delimiter_notice" :         "Trennzeichen hinter dem die Zahl steht?\n\rMoeglichkeiten: \"(\", \"[\", \"{\", \"<\"",
+    "filename_pattern_notice" :  "Benutzerdefiniertes Muster fuer Dateien benutzen? (Regulärer Ausdruck)\r\nDie Standartoption (nichts eingeben, Enter drücken) umfasst z.B.\r\nUrlaub Mallorca (123).jpg\r\nUrlaub_Mallorca_(123).jpg\r\nUrlaub-Mallorca-(123).jpg\r\n(Mischformen)\r\nRegEx:",
+    
+    "third_parties_notice" : "Dieses Tool verwendet \"json simple\" https://code.google.com/p/json-simple/ in Version 1.1.1, welches unter einer Apache License 2.0 veröffentlicht wurde."
+    
+}
