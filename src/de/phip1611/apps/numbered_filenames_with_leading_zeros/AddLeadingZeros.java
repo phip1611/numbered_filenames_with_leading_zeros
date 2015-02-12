@@ -114,8 +114,7 @@ public class AddLeadingZeros {
                 }
             }
         }
-        digits = String.valueOf(highestCount).length();
-        System.out.println(digits);
+        this.digits = String.valueOf(highestCount).length();
     }
     
     private void renameFiles() {

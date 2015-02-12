@@ -184,7 +184,7 @@ public final class CommandLineTool {
         } while (repeat);
         
         this.alzTool.execute();
-        
+        this.successful(); 
     }
     
     /**
@@ -240,6 +240,12 @@ public final class CommandLineTool {
      */
     private void escape() {
         throw new UnsupportedOperationException("Not supported yet.");
+    }
+    
+    private void successful() {
+        System.out.println("---------------------------------------------");
+        System.out.println("Operation erfoglreich ausgefuehrt. Ordner jetzt öffnen:");
+        System.out.println(this.directory);
     }
     
 }
