@@ -150,11 +150,25 @@ public final class CommandLineTool {
                 this.filenamePattern = input;
                 repeat = false;
             }
-        } while (repeat);
+        } while (repeat);        
+        
+        this.alzTool.setDirectory(this.directory);
+        this.alzTool.setDelimiter(this.delimiter);
+        this.alzTool.setPattern(this.filenamePattern);
+        this.alzTool.openDirectory();
+        
+        String[] exampleFilesFromDirectory = this.alzTool.getExampleFiles();
         
         /* Nach Bestätigung fragen. */
         repeat = true;
         do {
+            System.out.println("---------------------------------------------");
+            System.out.println("Beispieldateien aus dem Verzeichnis, die zu dem Muster passen:");
+            for (String filename : exampleFilesFromDirectory) {
+                if (filename != null) {
+                    System.out.println(filename);
+                }
+            }
             input = askUserForAction("Wirklich fortfahren? \"ja\" eingeben!\r\nVerzeichnis: "+this.directory+"\r\nTrennzeichen: "+this.delimiter+"\r\nDateinamen-Muster: "+this.filenamePattern+"\r\n\"ja\" eingeben!");
             if (!input.toLowerCase().equals("ja")) {
                 switch (input) {
@@ -169,21 +183,6 @@ public final class CommandLineTool {
             }
         } while (repeat);
         
-        
-        
-        this.alzTool.setDirectory(this.directory);
-        this.alzTool.setDelimiter(this.delimiter);
-        this.alzTool.setPattern(this.filenamePattern);
-        this.alzTool.openDirectory();
-        String[] exampleFilesFromDirectory = this.alzTool.getExampleFiles();
-        
-        System.out.println("---------------------------------------------");
-        System.out.println("Beispieldateien aus dem Verzeichnis, die zu dem Muster passen:");
-        for (String filename : exampleFilesFromDirectory) {
-            if (filename != null) {
-                System.out.println(filename);
-            }
-        }
         this.alzTool.execute();
         
     }
